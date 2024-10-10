@@ -1,3 +1,5 @@
+// Mail Service ID : service_rsi6fy4
+
 const nonButton = document.getElementById("non");
 const ouiButton = document.getElementById("oui");
 
@@ -75,9 +77,10 @@ ouiButton.addEventListener("click", () => {
 
   // Ajouter un GIF sous le champ de date
   const gifElement = document.createElement("img");
-  gifElement.src = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2RwcXVjdzMwZ29kY2g4bGg5ZXJ6Z2ZjMmJkdGV5OTRrOXVkNTR1MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qCT06WLJURMyfsEi2r/giphy.gif";
+  gifElement.src =
+    "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXBvYW8xNTU1NWowYmVzaGl4NmZoNmxwdG1mM2RmdXJqYW0yMm1jbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1JmGiBtqTuehfYxuy9/giphy.gif";
   gifElement.alt = "Gif mignon";
-  gifElement.style.maxWidth = "350px";
+  gifElement.style.maxWidth = "400px";
   gifElement.style.marginTop = "20px";
 
   // Ajouter le GIF au conteneur
