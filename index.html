@@ -7,38 +7,39 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Veux-tu sortir avec moi ?</h1>
-      <!-- Ajout du GIF de chat mignon -->
-      <img
-        src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVmcDFtc29uYm1jZGJpc2h2aHNmdGNmZTZ4M3Jib2cxcjRybWNoMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif"
-        alt="Chat mignon"
-        class="cat-gif"
-      />
-
-      <div class="buttons">
+    <h1>Veux-tu sortir avec moi ?</h1>
+    <!-- Ajout du GIF de chat mignon -->
+    <img
+      src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVmcDFtc29uYm1jZGJpc2h2aHNmdGNmZTZ4M3Jib2cxcjRybWNoMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif"
+      alt="Chat mignon"
+      class="cat-gif"
+    />
+    <div class="buttons">
         <button id="oui">OUI</button>
         <button id="non">NOOOOON</button>
       </div>
     </div>
-
-    <!-- Ajout des cœurs -->
-    <div id="hearts-container"></div>
-
     <div class="tooltip-container">
-      <span class="tooltip">Choisis bien !</span>
-      <span class="text">Pssst</span>
-    </div>
+        <span class="tooltip">Choisis bien !</span>
+        <span class="text">Pssst</span>
+      </div>
 
-    <script src="script.js"></script>
+    <div id="hearts-container"></div>
+    <!-- Conteneur pour les cœurs flottants -->
+    <div id="gif-container"></div>
+    <!-- Conteneur pour le GIF après soumission -->
+    <!-- Charger EmailJS SDK -->
     <script
       type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
     ></script>
     <script type="text/javascript">
       (function () {
-        emailjs.init("YOUR_USER_ID"); // Remplace par ton User ID
+        emailjs.init("-ajmn9A_oAkDsD_qJ"); // Remplace avec ta clé publique EmailJS
       })();
     </script>
+
+    <script src="script.js"></script>
+    <!-- Lien vers ton fichier JS -->
   </body>
 </html>
