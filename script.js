@@ -62,6 +62,26 @@ ouiButton.addEventListener("click", () => {
       const options = { day: "numeric", month: "long", year: "numeric" };
       const formattedDate = dateObj.toLocaleDateString("fr-FR", options);
 
+      // Envoyer un email avec EmailJS
+      emailjs
+        .send("service_rsi6fy4", "template_1fqr5xj", {
+          to_name: "Gabriel",
+          message: `La personne est disponible le ${formattedDate}.`,
+        })
+        .then(
+          (response) => {
+            console.log(
+              "Email envoyé avec succès !",
+              response.status,
+              response.text
+            );
+          },
+          (err) => {
+            console.error("Erreur lors de l'envoi de l'email...", err);
+          }
+        );
+
+      // Afficher un message de confirmation avec un GIF
       document.body.innerHTML = `
             <h1>Super ! J'ai hâte de te voir le ${formattedDate} !</h1>
             <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2RwcXVjdzMwZ29kY2g4bGg5ZXJ6Z2ZjMmJkdGV5OTRrOXVkNTR1MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qCT06WLJURMyfsEi2r/giphy.gif" alt="Gif mignon" style="max-width: 350px; margin-top: 20px;" />
