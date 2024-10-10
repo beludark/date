@@ -1,4 +1,6 @@
 // Mail Service ID : service_rsi6fy4
+// Template ID : template_1fqr5xj
+// Public key : -ajmn9A_oAkDsD_qJ
 
 const nonButton = document.getElementById("non");
 const ouiButton = document.getElementById("oui");
@@ -64,10 +66,16 @@ ouiButton.addEventListener("click", () => {
 
       // Envoi de l'email avec EmailJS
       emailjs
-        .send("service_rsi6fy4", "YOUR_TEMPLATE_ID", {
-          to_name: "Gabriel",
-          message: `La personne est disponible le ${formattedDate}.`,
-        })
+        .send(
+          "service_rsi6fy4",
+          "template_1fqr5xj",
+          {
+            to_name: "Gabriel", // Remplace par ton nom ou une variable si besoin
+            from_name: "Carla", // Le nom de la personne qui envoie l'email
+            message: `Carla sera disponible le ${formattedDate} !!`,
+          },
+          "-ajmn9A_oAkDsD_qJ"
+        ) // Public key
         .then(
           (response) => {
             console.log(
