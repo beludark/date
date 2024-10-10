@@ -1,0 +1,209 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fce4ec;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ec407a;
+}
+
+.container {
+  display: inline-block;
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+/* From Uiverse.io by cssbuttons-io */
+button {
+  padding: 1.3em 3em;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #ff69b4;
+  box-shadow: 0px 15px 20px rgba(255, 30, 150, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+#oui {
+  background-color: #e91e63;
+  color: white;
+}
+
+#non {
+  background-color: #f06292;
+  color: white;
+  position: relative;
+}
+
+/* From Uiverse.io by MRez321 */
+.tooltip-container {
+  --background: #e91e63;
+  background: var(--background);
+  position: fixed;
+  bottom: 20px;
+  left: 5%;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  border-radius: 10px;
+  width: 8em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  transform: translateX(-50%);
+  padding: 0.3em 0.6em;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  background: var(--background);
+  border-radius: 5px;
+  width: 7em;
+  text-align: center;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  height: 0.6em;
+  width: 0.6em;
+  bottom: -0.2em;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  background: var(--background);
+}
+
+.tooltip-container:hover .tooltip {
+  top: -100%;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  animation: shake 500ms ease-in-out forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.text {
+  position: relative;
+  padding: 0.7em 1.8em;
+  overflow: hidden;
+}
+
+.text::before {
+  content: "(^_^)/";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: inherit;
+  background-color: var(--background);
+  transition: 0.3s;
+}
+
+.tooltip-container:hover .text::before {
+  top: 0;
+}
+
+/* Styles des cœurs */
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000; /* Assure que les cœurs passent au-dessus du contenu */
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4; /* Couleur rose parfaite pour le côté "girly" */
+  transform: rotate(
+    -45deg
+  ); /* On tourne la div pour que ça ressemble à un cœur */
+  animation: fall 5s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 10px;
+}
+
+/* Animation de chute */
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+.cat-gif {
+  width: 600px; /* Ajuste la taille du GIF */
+  display: block;
+  margin: 20px auto; /* Centre le GIF horizontalement */
+}
