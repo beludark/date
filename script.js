@@ -62,14 +62,32 @@ ouiButton.addEventListener("click", () => {
       const options = { day: "numeric", month: "long", year: "numeric" };
       const formattedDate = dateObj.toLocaleDateString("fr-FR", options);
 
-      document.body.innerHTML = `
-            <h1>Super ! J'ai hâte de te voir le ${formattedDate} !</h1>
-            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2RwcXVjdzMwZ29kY2g4bGg5ZXJ6Z2ZjMmJkdGV5OTRrOXVkNTR1MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qCT06WLJURMyfsEi2r/giphy.gif" alt="Gif mignon" style="max-width: 350px; margin-top: 20px;" />
-          `;
-      // Ajuster les styles pour le message final
-      document.querySelector("h1").style.color = "#ec407a";
-      document.querySelector("h1").style.fontSize = "2.5rem";
-      document.querySelector("p").style.fontSize = "1.5rem";
+      // Envoi de l'email avec EmailJS
+      emailjs
+        .send("service_rsi6fy4", "YOUR_TEMPLATE_ID", {
+          to_name: "Gabriel",
+          message: `La personne est disponible le ${formattedDate}.`,
+        })
+        .then(
+          (response) => {
+            console.log(
+              "Email envoyé avec succès !",
+              response.status,
+              response.text
+            );
+
+            // Afficher le message final
+            document.body.innerHTML = `
+          <h1>Super ! J'ai hâte de te voir le ${formattedDate} !</h1>
+          <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2RwcXVjdzMwZ29kY2g4bGg5ZXJ6Z2ZjMmJkdGV5OTRrOXVkNTR1MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qCT06WLJURMyfsEi2r/giphy.gif" alt="Gif mignon" style="max-width: 350px; margin-top: 20px;" />
+        `;
+            document.querySelector("h1").style.color = "#ec407a";
+            document.querySelector("h1").style.fontSize = "2.5rem";
+          },
+          (err) => {
+            console.error("Erreur lors de l'envoi de l'email...", err);
+          }
+        );
     } else {
       alert("S'il te plaît, indique ta disponibilité !");
     }
