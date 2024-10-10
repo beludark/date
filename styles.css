@@ -207,3 +207,40 @@ button:active {
   display: block;
   margin: 20px auto; /* Centre le GIF horizontalement */
 }
+
+/* Responsive Design */
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 1em 2.5em;
+    font-size: 13px;
+  }
+
+  .cat-gif {
+    width: 100%; /* Le GIF prendra toute la largeur disponible */
+  }
+
+  body {
+    padding-top: 50px;
+  }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    padding: 0.8em 2em;
+    font-size: 12px;
+  }
+
+  body {
+    padding-top: 30px;
+  }
+}
