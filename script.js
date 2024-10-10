@@ -29,9 +29,10 @@ ouiButton.addEventListener("click", () => {
         <p>Quand serais-tu disponible pour qu'on se voie ?</p>
         <input type="date" id="dispo" />
         <button id="submitDispo">Envoyer</button>
+        <div id="gif-container"></div> <!-- Conteneur pour le GIF -->
       `;
 
-  // Ajouter du style au formulaire
+  // Ajouter un style au formulaire
   document.querySelector("p").style.fontSize = "1.5rem";
   document.querySelector("input").style.padding = "10px";
   document.querySelector("input").style.margin = "20px";
@@ -51,6 +52,9 @@ ouiButton.addEventListener("click", () => {
   // Ajouter un écouteur d'événement pour le bouton "Envoyer"
   document.getElementById("submitDispo").addEventListener("click", () => {
     const dispo = document.getElementById("dispo").value;
+    const gifContainer = document.getElementById("gif-container"); // Conteneur pour le GIF
+    gifContainer.innerHTML = ""; // Effacer le GIF précédent
+
     if (dispo) {
       const dateObj = new Date(dispo);
       const options = { day: "numeric", month: "long", year: "numeric" };
@@ -68,6 +72,16 @@ ouiButton.addEventListener("click", () => {
       alert("S'il te plaît, indique ta disponibilité !");
     }
   });
+
+  // Ajouter un GIF sous le champ de date
+  const gifElement = document.createElement("img");
+  gifElement.src = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2RwcXVjdzMwZ29kY2g4bGg5ZXJ6Z2ZjMmJkdGV5OTRrOXVkNTR1MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qCT06WLJURMyfsEi2r/giphy.gif";
+  gifElement.alt = "Gif mignon";
+  gifElement.style.maxWidth = "350px";
+  gifElement.style.marginTop = "20px";
+
+  // Ajouter le GIF au conteneur
+  document.getElementById("gif-container").appendChild(gifElement);
 });
 
 // Fonction pour créer des cœurs flottants
